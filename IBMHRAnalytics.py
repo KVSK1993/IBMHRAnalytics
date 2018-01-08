@@ -7,7 +7,7 @@ from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier,GradientBoostingClassifier,AdaBoostClassifier
 from sklearn.ensemble import VotingClassifier
 from sklearn import ensemble
-import xgboost as xgb
+#import xgboost as xgb
 from sklearn.metrics import confusion_matrix
 from imblearn.over_sampling import SMOTE
 import numpy as np
@@ -185,7 +185,7 @@ majority_class = majority_class.fit(x_res, y_res)
 majority_pred=majority_class.predict(X_CV)
 fpr_majority, tpr_majority, thresholds = roc_curve(Y_CV, majority_pred)
 roc_auc_majority=auc(fpr_majority,tpr_majority)
-plt.plot(fpr_majority, tpr_majority, label='Majority Voting Classifier (Soft): ' + str(roc_auc_majority)[0:7])
+plt.plot(fpr_majority, tpr_majority, label='Majority Voting Classifier (Hard): ' + str(roc_auc_majority)[0:7])
 
 
 plt.legend(fontsize=14)
